@@ -1,0 +1,363 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x690b4778, pid=2232, tid=5092
+#
+# JRE version: 6.0_16-b01
+# Java VM: Java HotSpot(TM) Client VM (14.2-b01 mixed mode windows-x86 )
+# Problematic frame:
+# C  [ieframe.dll+0x64778]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x003aa400):  JavaThread "main" [_thread_in_native, id=5092, stack(0x00090000,0x00190000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+
+Registers:
+EAX=0x00000000, EBX=0x0018db6c, ECX=0x00000001, EDX=0x005a2734
+ESP=0x0018db58, EBP=0x0018db70, ESI=0x8000ffff, EDI=0x00000000
+EIP=0x690b4778, EFLAGS=0x00210246
+
+Top of Stack: (sp=0x0018db58)
+0x0018db58:   01f28968 006d2d78 01f39474 690b46c4
+0x0018db68:   01f3946c 00000000 0018db78 690b46a6
+0x0018db78:   0018db8c 6b9c0f3b 005a2734 006d2d78
+0x0018db88:   01f3946c 0018dba0 6b84484b 000003e8
+0x0018db98:   00000001 01f3946c 0018dbd0 6b844963
+0x0018dba8:   000003e8 00000001 504afd7b 00000000
+0x0018dbb8:   6823f2a4 00000000 01f39474 0018dc70
+0x0018dbc8:   6ba3b2a8 00000000 0018dbdc 6823f2e0 
+
+Instructions: (pc=0x690b4778)
+0x690b4768:   8b f8 85 ff 0f 84 b0 54 1c 00 33 f6 39 37 74 0a
+0x690b4778:   8b 0f 8b c6 5f 5e 89 0b 5b c3 6a 10 6a 08 ff 15 
+
+
+Stack: [0x00090000,0x00190000],  sp=0x0018db58,  free space=1014k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [ieframe.dll+0x64778]
+C  [ieframe.dll+0x646a6]
+C  [jscript9.dll+0x1a0f3b]
+C  [jscript9.dll+0x2484b]
+C  [jscript9.dll+0x24963]
+C  [mshtml.dll+0x29f2e0]
+C  [USER32.dll+0x162fa]
+C  [USER32.dll+0x16d3a]
+C  [USER32.dll+0x177c4]
+C  [USER32.dll+0x1788a]
+C  [USER32.dll+0x3cdfd]
+C  [USER32.dll+0x3cf5c]
+C  [USER32.dll+0x3ce8a]
+C  [USER32.dll+0x3cc0e]
+C  [comdlg32.dll+0x597b]
+C  [comdlg32.dll+0x41b50]
+C  [comdlg32.dll+0x429d0]
+C  [comdlg32.dll+0x42b15]
+C  [comdlg32.dll+0x42b71]
+C  [comdlg32.dll+0x39a9b]
+C  [comdlg32.dll+0x3a33f]
+C  [swt-win32-3735.dll+0x6e78]
+j  org.eclipse.swt.internal.win32.OS.GetOpenFileNameW(Lorg/eclipse/swt/internal/win32/OPENFILENAME;)Z+0
+j  org.eclipse.swt.internal.win32.OS.GetOpenFileName(Lorg/eclipse/swt/internal/win32/OPENFILENAME;)Z+7
+j  org.eclipse.swt.widgets.FileDialog.open()Ljava/lang/String;+890
+j  org.eclipse.ui.internal.ide.actions.OpenLocalFileAction.run()V+36
+j  org.eclipse.ui.internal.ide.actions.OpenLocalFileAction.run(Lorg/eclipse/jface/action/IAction;)V+1
+j  org.eclipse.ui.internal.PluginAction.runWithEvent(Lorg/eclipse/swt/widgets/Event;)V+110
+j  org.eclipse.ui.internal.WWinPluginAction.runWithEvent(Lorg/eclipse/swt/widgets/Event;)V+9
+j  org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(Lorg/eclipse/swt/widgets/Event;Z)V+354
+j  org.eclipse.jface.action.ActionContributionItem.access$2(Lorg/eclipse/jface/action/ActionContributionItem;Lorg/eclipse/swt/widgets/Event;Z)V+3
+j  org.eclipse.jface.action.ActionContributionItem$5.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+60
+J  org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V
+j  org.eclipse.swt.widgets.Widget.sendEvent(Lorg/eclipse/swt/widgets/Event;)V+25
+j  org.eclipse.swt.widgets.Display.runDeferredEvents()Z+92
+j  org.eclipse.swt.widgets.Display.readAndDispatch()Z+69
+j  org.eclipse.ui.internal.Workbench.runEventLoop(Lorg/eclipse/jface/window/Window$IExceptionHandler;Lorg/eclipse/swt/widgets/Display;)V+9
+j  org.eclipse.ui.internal.Workbench.runUI()I+555
+j  org.eclipse.ui.internal.Workbench.access$4(Lorg/eclipse/ui/internal/Workbench;)I+1
+j  org.eclipse.ui.internal.Workbench$7.run()V+55
+j  org.eclipse.core.databinding.observable.Realm.runWithDefault(Lorg/eclipse/core/databinding/observable/Realm;Ljava/lang/Runnable;)V+12
+j  org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/ui/application/WorkbenchAdvisor;)I+18
+j  org.eclipse.ui.PlatformUI.createAndRunWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/ui/application/WorkbenchAdvisor;)I+2
+j  com.adobe.flexbuilder.standalone.FlashBuilderApplication.start(Lorg/eclipse/equinox/app/IApplicationContext;)Ljava/lang/Object;+130
+j  org.eclipse.equinox.internal.app.EclipseAppHandle.run(Ljava/lang/Object;)Ljava/lang/Object;+135
+j  org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(Ljava/lang/Object;)Ljava/lang/Object;+103
+j  org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(Ljava/lang/Object;)Ljava/lang/Object;+29
+j  org.eclipse.core.runtime.adaptor.EclipseStarter.run(Ljava/lang/Object;)Ljava/lang/Object;+149
+j  org.eclipse.core.runtime.adaptor.EclipseStarter.run([Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Object;+183
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xecf9c]
+V  [jvm.dll+0x1741e1]
+V  [jvm.dll+0xed01d]
+V  [jvm.dll+0x18e66b]
+V  [jvm.dll+0x18ee76]
+V  [jvm.dll+0x117bf3]
+C  [java.dll+0x714f]
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+161
+j  org.eclipse.equinox.launcher.Main.invokeFramework([Ljava/lang/String;[Ljava/net/URL;)V+211
+j  org.eclipse.equinox.launcher.Main.basicRun([Ljava/lang/String;)V+126
+j  org.eclipse.equinox.launcher.Main.run([Ljava/lang/String;)I+4
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xecf9c]
+V  [jvm.dll+0x1741e1]
+V  [jvm.dll+0xed01d]
+V  [jvm.dll+0xf5e2f]
+V  [jvm.dll+0xf7b04]
+C  [eclipse_1406.dll+0x6560]
+C  [eclipse_1406.dll+0x5288]
+C  [eclipse_1406.dll+0x15b6]
+C  [FlashBuilder.exe+0x1414]
+C  [FlashBuilder.exe+0x1010]
+C  [FlashBuilder.exe+0x3029]
+C  [kernel32.dll+0x1338a]
+C  [ntdll.dll+0x39f72]
+C  [ntdll.dll+0x39f45]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.eclipse.swt.internal.win32.OS.GetOpenFileNameW(Lorg/eclipse/swt/internal/win32/OPENFILENAME;)Z+0
+j  org.eclipse.swt.internal.win32.OS.GetOpenFileName(Lorg/eclipse/swt/internal/win32/OPENFILENAME;)Z+7
+j  org.eclipse.swt.widgets.FileDialog.open()Ljava/lang/String;+890
+j  org.eclipse.ui.internal.ide.actions.OpenLocalFileAction.run()V+36
+j  org.eclipse.ui.internal.ide.actions.OpenLocalFileAction.run(Lorg/eclipse/jface/action/IAction;)V+1
+j  org.eclipse.ui.internal.PluginAction.runWithEvent(Lorg/eclipse/swt/widgets/Event;)V+110
+j  org.eclipse.ui.internal.WWinPluginAction.runWithEvent(Lorg/eclipse/swt/widgets/Event;)V+9
+j  org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(Lorg/eclipse/swt/widgets/Event;Z)V+354
+j  org.eclipse.jface.action.ActionContributionItem.access$2(Lorg/eclipse/jface/action/ActionContributionItem;Lorg/eclipse/swt/widgets/Event;Z)V+3
+j  org.eclipse.jface.action.ActionContributionItem$5.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+60
+J  org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V
+j  org.eclipse.swt.widgets.Widget.sendEvent(Lorg/eclipse/swt/widgets/Event;)V+25
+j  org.eclipse.swt.widgets.Display.runDeferredEvents()Z+92
+j  org.eclipse.swt.widgets.Display.readAndDispatch()Z+69
+j  org.eclipse.ui.internal.Workbench.runEventLoop(Lorg/eclipse/jface/window/Window$IExceptionHandler;Lorg/eclipse/swt/widgets/Display;)V+9
+j  org.eclipse.ui.internal.Workbench.runUI()I+555
+j  org.eclipse.ui.internal.Workbench.access$4(Lorg/eclipse/ui/internal/Workbench;)I+1
+j  org.eclipse.ui.internal.Workbench$7.run()V+55
+j  org.eclipse.core.databinding.observable.Realm.runWithDefault(Lorg/eclipse/core/databinding/observable/Realm;Ljava/lang/Runnable;)V+12
+j  org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/ui/application/WorkbenchAdvisor;)I+18
+j  org.eclipse.ui.PlatformUI.createAndRunWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/ui/application/WorkbenchAdvisor;)I+2
+j  com.adobe.flexbuilder.standalone.FlashBuilderApplication.start(Lorg/eclipse/equinox/app/IApplicationContext;)Ljava/lang/Object;+130
+j  org.eclipse.equinox.internal.app.EclipseAppHandle.run(Ljava/lang/Object;)Ljava/lang/Object;+135
+j  org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(Ljava/lang/Object;)Ljava/lang/Object;+103
+j  org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(Ljava/lang/Object;)Ljava/lang/Object;+29
+j  org.eclipse.core.runtime.adaptor.EclipseStarter.run(Ljava/lang/Object;)Ljava/lang/Object;+149
+j  org.eclipse.core.runtime.adaptor.EclipseStarter.run([Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Object;+183
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+161
+j  org.eclipse.equinox.launcher.Main.invokeFramework([Ljava/lang/String;[Ljava/net/URL;)V+211
+j  org.eclipse.equinox.launcher.Main.basicRun([Ljava/lang/String;)V+126
+j  org.eclipse.equinox.launcher.Main.run([Ljava/lang/String;)I+4
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x3555f400 JavaThread "Worker-4" [_thread_blocked, id=4848, stack(0x40390000,0x40490000)]
+  0x3555f000 JavaThread "Worker-3" [_thread_blocked, id=3972, stack(0x40050000,0x40150000)]
+  0x3555e800 JavaThread "Worker-2" [_thread_blocked, id=512, stack(0x3ff50000,0x40050000)]
+  0x3555e400 JavaThread "Worker-1" [_thread_blocked, id=344, stack(0x38650000,0x38750000)]
+  0x3555d000 JavaThread "Code Model Worker" [_thread_blocked, id=4288, stack(0x3a110000,0x3a210000)]
+  0x3555cc00 JavaThread "Code Model Worker" [_thread_blocked, id=4420, stack(0x3a010000,0x3a110000)]
+  0x3555b800 JavaThread "Bundle File Closer" daemon [_thread_blocked, id=4444, stack(0x02490000,0x02590000)]
+  0x355ed800 JavaThread "Thread-3" [_thread_in_native, id=3532, stack(0x37db0000,0x37eb0000)]
+  0x3631f400 JavaThread "Worker-0" [_thread_blocked, id=4564, stack(0x36c40000,0x36d40000)]
+  0x3620b400 JavaThread "Worker-JM" [_thread_blocked, id=340, stack(0x36760000,0x36860000)]
+  0x361c0400 JavaThread "[Timer] - Main Queue Handler" daemon [_thread_blocked, id=4000, stack(0x365a0000,0x366a0000)]
+  0x354d5c00 JavaThread "Framework Event Dispatcher" daemon [_thread_blocked, id=528, stack(0x35a70000,0x35b70000)]
+  0x355f9000 JavaThread "Start Level Event Dispatcher" daemon [_thread_blocked, id=2332, stack(0x35930000,0x35a30000)]
+  0x354d5400 JavaThread "State Data Manager" daemon [_thread_blocked, id=4304, stack(0x357f0000,0x358f0000)]
+  0x355a4400 JavaThread "Framework Active Thread" [_thread_blocked, id=4156, stack(0x356b0000,0x357b0000)]
+  0x023a8000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=4880, stack(0x35230000,0x35330000)]
+  0x023a3400 JavaThread "CompilerThread0" daemon [_thread_blocked, id=316, stack(0x350f0000,0x351f0000)]
+  0x023a2c00 JavaThread "Attach Listener" daemon [_thread_blocked, id=4176, stack(0x34fb0000,0x350b0000)]
+  0x02398400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=312, stack(0x34eb0000,0x34fb0000)]
+  0x02367400 JavaThread "Finalizer" daemon [_thread_blocked, id=3500, stack(0x34db0000,0x34eb0000)]
+  0x02366000 JavaThread "Reference Handler" daemon [_thread_blocked, id=4284, stack(0x34cb0000,0x34db0000)]
+=>0x003aa400 JavaThread "main" [_thread_in_native, id=5092, stack(0x00090000,0x00190000)]
+
+Other Threads:
+  0x02363400 VMThread [stack: 0x34a40000,0x34b40000] [id=1044]
+  0x023b2800 WatcherThread [stack: 0x35370000,0x35470000] [id=1264]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 18176K, used 4572K [0x047a0000, 0x05b50000, 0x06f00000)
+  eden space 16192K,  19% used [0x047a0000, 0x04ab7508, 0x05770000)
+  from space 1984K,  70% used [0x05960000, 0x05abfc58, 0x05b50000)
+  to   space 1984K,   0% used [0x05770000, 0x05770000, 0x05960000)
+ tenured generation   total 241984K, used 20339K [0x06f00000, 0x15b50000, 0x247a0000)
+   the space 241984K,   8% used [0x06f00000, 0x082dcc28, 0x082dce00, 0x15b50000)
+ compacting perm gen  total 65536K, used 46142K [0x247a0000, 0x287a0000, 0x347a0000)
+   the space 65536K,  70% used [0x247a0000, 0x274af810, 0x274afa00, 0x287a0000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x0040d000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\FlashBuilder.exe
+0x77cd0000 - 0x77e50000 	C:\Windows\SysWOW64\ntdll.dll
+0x772f0000 - 0x77400000 	C:\Windows\syswow64\kernel32.dll
+0x765a0000 - 0x765e7000 	C:\Windows\syswow64\KERNELBASE.dll
+0x75b90000 - 0x75c30000 	C:\Windows\syswow64\ADVAPI32.DLL
+0x765f0000 - 0x7669c000 	C:\Windows\syswow64\msvcrt.dll
+0x76520000 - 0x76539000 	C:\Windows\SysWOW64\sechost.dll
+0x77710000 - 0x77800000 	C:\Windows\syswow64\RPCRT4.dll
+0x756c0000 - 0x75720000 	C:\Windows\syswow64\SspiCli.dll
+0x756b0000 - 0x756bc000 	C:\Windows\syswow64\CRYPTBASE.dll
+0x75d10000 - 0x75e10000 	C:\Windows\syswow64\USER32.dll
+0x758c0000 - 0x75950000 	C:\Windows\syswow64\GDI32.dll
+0x778c0000 - 0x778ca000 	C:\Windows\syswow64\LPK.dll
+0x76450000 - 0x764ed000 	C:\Windows\syswow64\USP10.dll
+0x712e0000 - 0x7147e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_41e6975e2bd6f2b2\COMCTL32.dll
+0x76540000 - 0x76597000 	C:\Windows\syswow64\SHLWAPI.dll
+0x77830000 - 0x77890000 	C:\Windows\system32\IMM32.DLL
+0x75c40000 - 0x75d0c000 	C:\Windows\syswow64\MSCTF.dll
+0x71ee0000 - 0x71f4b000 	c:\program files (x86)\f-secure\hips\fshook32.dll
+0x77820000 - 0x77825000 	C:\Windows\syswow64\PSAPI.DLL
+0x72000000 - 0x7200f000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\eclipse\plugins\org.eclipse.equinox.launcher.win32.win32.x86_1.1.100.v20110502\eclipse_1406.dll
+0x74b30000 - 0x74bd3000 	C:\Windows\WinSxS\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.6161_none_50934f2ebcb7eb57\MSVCR90.dll
+0x755e0000 - 0x755e9000 	C:\Windows\system32\VERSION.dll
+0x6d710000 - 0x6d732000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\jre\bin\splashscreen.dll
+0x7c340000 - 0x7c396000 	C:\Windows\system32\MSVCR71.dll
+0x6d800000 - 0x6da8b000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\jre\bin\client\jvm.dll
+0x746f0000 - 0x74722000 	C:\Windows\system32\WINMM.dll
+0x747c0000 - 0x7480c000 	C:\Windows\system32\apphelp.dll
+0x71820000 - 0x718a0000 	C:\Windows\system32\uxtheme.dll
+0x6d7b0000 - 0x6d7bc000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\jre\bin\verify.dll
+0x6d330000 - 0x6d34f000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\jre\bin\java.dll
+0x6d290000 - 0x6d298000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\jre\bin\hpi.dll
+0x6d7f0000 - 0x6d7ff000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\jre\bin\zip.dll
+0x77550000 - 0x776ac000 	C:\Windows\system32\ole32.dll
+0x763c0000 - 0x7644f000 	C:\Windows\syswow64\OLEAUT32.DLL
+0x73e50000 - 0x73e66000 	C:\Windows\system32\CRYPTSP.dll
+0x73e10000 - 0x73e4b000 	C:\Windows\system32\rsaenh.dll
+0x77800000 - 0x77817000 	C:\Windows\syswow64\USERENV.dll
+0x76320000 - 0x7632b000 	C:\Windows\syswow64\profapi.dll
+0x6d610000 - 0x6d623000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\jre\bin\net.dll
+0x77510000 - 0x77545000 	C:\Windows\syswow64\WS2_32.dll
+0x77890000 - 0x77896000 	C:\Windows\syswow64\NSI.dll
+0x73f60000 - 0x73f9c000 	C:\Windows\system32\mswsock.dll
+0x73fd0000 - 0x73fd6000 	C:\Windows\System32\wship6.dll
+0x73f30000 - 0x73f40000 	C:\Windows\system32\NLAapi.dll
+0x73f10000 - 0x73f20000 	C:\Windows\system32\napinsp.dll
+0x73ef0000 - 0x73f02000 	C:\Windows\system32\pnrpnsp.dll
+0x743d0000 - 0x74414000 	C:\Windows\system32\DNSAPI.dll
+0x73ee0000 - 0x73ee8000 	C:\Windows\System32\winrnr.dll
+0x73f50000 - 0x73f55000 	C:\Windows\System32\wshtcpip.dll
+0x74a00000 - 0x74a1c000 	C:\Windows\system32\IPHLPAPI.DLL
+0x749f0000 - 0x749f7000 	C:\Windows\system32\WINNSI.DLL
+0x73e90000 - 0x73e96000 	C:\Windows\system32\rasadhlp.dll
+0x73ea0000 - 0x73ed8000 	C:\Windows\System32\fwpuclnt.dll
+0x6d630000 - 0x6d639000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\jre\bin\nio.dll
+0x36000000 - 0x3606e000 	C:\Users\KohtalaJ\Adobe Flash Builder 4.6\cascaded\335153\configuration\org.eclipse.osgi\bundles\505\1\.cp\swt-win32-3735.dll
+0x77400000 - 0x7747b000 	C:\Windows\syswow64\comdlg32.dll
+0x766a0000 - 0x772ea000 	C:\Windows\syswow64\SHELL32.dll
+0x75e40000 - 0x76002000 	C:\Windows\syswow64\WININET.dll
+0x77ca0000 - 0x77ca4000 	C:\Windows\syswow64\api-ms-win-downlevel-user32-l1-1-0.dll
+0x75c30000 - 0x75c34000 	C:\Windows\syswow64\api-ms-win-downlevel-shlwapi-l1-1-0.dll
+0x76050000 - 0x76054000 	C:\Windows\syswow64\api-ms-win-downlevel-version-l1-1-0.dll
+0x76010000 - 0x76013000 	C:\Windows\syswow64\api-ms-win-downlevel-normaliz-l1-1-0.dll
+0x778b0000 - 0x778b3000 	C:\Windows\syswow64\normaliz.DLL
+0x75970000 - 0x75b8b000 	C:\Windows\syswow64\iertutil.dll
+0x778a0000 - 0x778a5000 	C:\Windows\syswow64\api-ms-win-downlevel-advapi32-l1-1-0.dll
+0x761a0000 - 0x762c0000 	C:\Windows\syswow64\CRYPT32.dll
+0x77700000 - 0x7770c000 	C:\Windows\syswow64\MSASN1.dll
+0x71800000 - 0x71813000 	C:\Windows\system32\dwmapi.dll
+0x72ff0000 - 0x730e5000 	C:\Windows\system32\propsys.dll
+0x76330000 - 0x763b3000 	C:\Windows\syswow64\CLBCatQ.DLL
+0x02740000 - 0x0275d000 	C:\Users\KohtalaJ\Adobe Flash Builder 4.6\cascaded\335153\configuration\org.eclipse.osgi\bundles\505\1\.cp\swt-gdip-win32-3735.dll
+0x73380000 - 0x73510000 	C:\Windows\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.7601.18455_none_72d576ad8665e853\gdiplus.dll
+0x72a60000 - 0x72b90000 	C:\Windows\system32\WindowsCodecs.dll
+0x36860000 - 0x368a1000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\eclipse\plugins\com.adobe.flexide.nativelibs_4.6.1.335153\os\win32\x86\BridgeTalk.dll
+0x70b30000 - 0x70b9a000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\eclipse\plugins\com.adobe.flexide.nativelibs_4.6.1.335153\libs\adobe_caps.dll
+0x75720000 - 0x758bd000 	C:\Windows\syswow64\SETUPAPI.dll
+0x76020000 - 0x76047000 	C:\Windows\syswow64\CFGMGR32.dll
+0x75950000 - 0x75962000 	C:\Windows\syswow64\DEVOBJ.dll
+0x75550000 - 0x75571000 	C:\Windows\system32\ntmarta.dll
+0x776b0000 - 0x776f5000 	C:\Windows\syswow64\WLDAP32.dll
+0x376c0000 - 0x37777000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\eclipse\plugins\com.adobe.flexbuilder.utils.osnative_4.6.1.335153\os\win32\x86\JNIToNativeBridge.dll
+0x36110000 - 0x3611b000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\eclipse\plugins\com.adobe.flexide.amt_4.6.1.335153\os\win32\x86\amt_win_jnilib.dll
+0x6f2a0000 - 0x6f32e000 	C:\Windows\WinSxS\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.6161_none_50934f2ebcb7eb57\MSVCP90.dll
+0x6f1b0000 - 0x6f2a0000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\eclipse\plugins\com.adobe.flexide.amt_4.6.1.335153\os\win32\x86\amtlib.dll
+0x6f090000 - 0x6f1a5000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\eclipse\plugins\com.adobe.flexide.amt_4.6.1.335153\os\win32\x86\amtservices.dll
+0x70ad0000 - 0x70b28000 	C:\Windows\system32\WINHTTP.dll
+0x6f040000 - 0x6f08f000 	C:\Windows\system32\webio.dll
+0x6efd0000 - 0x6f03a000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\eclipse\plugins\com.adobe.flexide.amt_4.6.1.335153\os\win32\x86\adobe_caps.dll
+0x37ef0000 - 0x37f18000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\eclipse\plugins\com.adobe.flexide.amt_4.6.1.335153\os\win32\x86\asneu.dll
+0x74470000 - 0x7447a000 	C:\Windows\system32\wbem\wbemprox.dll
+0x73840000 - 0x7389c000 	C:\Windows\system32\wbemcomn.dll
+0x746c0000 - 0x746ce000 	C:\Windows\system32\RpcRtRemote.dll
+0x73830000 - 0x7383f000 	C:\Windows\system32\wbem\wbemsvc.dll
+0x73790000 - 0x73826000 	C:\Windows\system32\wbem\fastprox.dll
+0x72260000 - 0x72278000 	C:\Windows\system32\NTDSAPI.dll
+0x746b0000 - 0x746bd000 	C:\Windows\system32\dhcpcsvc6.DLL
+0x743b0000 - 0x743c2000 	C:\Windows\system32\dhcpcsvc.DLL
+0x73dc0000 - 0x73dc8000 	C:\Windows\system32\credssp.dll
+0x6ef30000 - 0x6efc2000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\eclipse\plugins\com.adobe.flexide.amt_4.6.1.335153\os\win32\x86\updaternotifications.dll
+0x74680000 - 0x74691000 	C:\Windows\system32\NETAPI32.dll
+0x74670000 - 0x74679000 	C:\Windows\system32\netutils.dll
+0x74650000 - 0x74669000 	C:\Windows\system32\srvcli.dll
+0x74640000 - 0x7464f000 	C:\Windows\system32\wkscli.dll
+0x6eeb0000 - 0x6ef2d000 	C:\Windows\SysWOW64\taskschd.dll
+0x37f20000 - 0x37f2b000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\eclipse\plugins\com.adobe.flexide.nativelibs_4.6.1.335153\os\win32\x86\Headlights.dll
+0x6d000000 - 0x6d14a000 	C:\CS6\CS6_32\Adobe Flash Builder 4.6\jre\bin\awt.dll
+0x75580000 - 0x755d1000 	C:\Windows\system32\WINSPOOL.DRV
+0x744f0000 - 0x744f5000 	C:\Windows\system32\msimg32.dll
+0x70400000 - 0x7056f000 	C:\Windows\system32\explorerframe.dll
+0x72550000 - 0x7257f000 	C:\Windows\system32\DUser.dll
+0x70740000 - 0x707f2000 	C:\Windows\system32\DUI70.dll
+0x731e0000 - 0x7321c000 	C:\Windows\system32\oleacc.dll
+0x74450000 - 0x7445f000 	C:\Users\KohtalaJ\Adobe Flash Builder 4.6\cascaded\335153\configuration\org.eclipse.osgi\bundles\215\1\.cp\jWinHttp-1.0.0.dll
+0x39e30000 - 0x39e3e000 	C:\Users\KohtalaJ\Adobe Flash Builder 4.6\cascaded\335153\configuration\org.eclipse.osgi\bundles\209\1\.cp\os\win32\x86\localfile_1_0_0.dll
+0x73600000 - 0x7362e000 	C:\Windows\system32\mlang.dll
+0x69050000 - 0x69b8f000 	C:\Windows\SysWOW64\ieframe.dll
+0x74460000 - 0x74464000 	C:\Windows\SysWOW64\api-ms-win-downlevel-shell32-l1-1-0.dll
+0x74490000 - 0x74494000 	C:\Windows\system32\api-ms-win-downlevel-shlwapi-l2-1-0.dll
+0x76060000 - 0x7618c000 	C:\Windows\syswow64\urlmon.dll
+0x76190000 - 0x76194000 	C:\Windows\syswow64\api-ms-win-downlevel-ole32-l1-1-0.dll
+0x73ce0000 - 0x73d3f000 	C:\Windows\system32\SXS.DLL
+0x67fa0000 - 0x6904e000 	C:\Windows\SysWOW64\mshtml.dll
+0x744a0000 - 0x744a4000 	C:\Windows\system32\api-ms-win-downlevel-advapi32-l2-1-0.dll
+0x73f40000 - 0x73f48000 	C:\Windows\system32\Secur32.dll
+0x6b820000 - 0x6bc31000 	C:\Windows\SysWOW64\jscript9.dll
+0x735f0000 - 0x735fb000 	C:\Windows\system32\msimtf.dll
+0x6f330000 - 0x6f677000 	C:\Windows\system32\d2d1.dll
+
+VM Arguments:
+jvm_args: -Xms256m -Xmx512m -XX:MaxPermSize=256m -XX:PermSize=64m -Dorg.eclipse.equinox.p2.reconciler.dropins.directory=eclipse/dropins -Declipse.application=com.adobe.flexbuilder.standalone.FlashBuilderApplication 
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+CLASSPATH=.;C:\Program Files (x86)\Java\jre7\lib\ext\QTJava.zip
+PATH=C:/CS6/CS6_32/Adobe Flash Builder 4.6/jre/bin/client;C:/CS6/CS6_32/Adobe Flash Builder 4.6/jre/bin;C:/CS6/CS6_32/Adobe Flash Builder 4.6/jre/lib/i386;C:\CS6\CS6_32\Adobe Flash Builder 4.6\;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Unify\Team Developer 6.0\Axis2\Lib;C:\Program Files (x86)\Unify\Team Developer 6.0;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\QuickTime\QTSystem\
+USERNAME=kohtalaJ
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 23 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7601 Service Pack 1
+
+CPU:total 4 (4 cores per cpu, 1 threads per core) family 6 model 23 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1
+
+Memory: 4k page, physical 4177244k(1772480k free), swap 4194303k(4194303k free)
+
+vm_info: Java HotSpot(TM) Client VM (14.2-b01) for windows-x86 JRE (1.6.0_16-b01), built on Jul 31 2009 11:26:58 by "java_re" with MS VC++ 7.1
+
+time: Mon Sep 15 08:15:40 2014
+elapsed time: 20 seconds
+
